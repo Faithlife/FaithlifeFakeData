@@ -1,11 +1,11 @@
-# ProjectName
+# Faithlife.FakeData
 
-**ProjectName** description
+**Faithlife.FakeData** description
 
 ## Installation
 
-Install **ProjectName** using NuGet. [![NuGet](https://img.shields.io/nuget/v/ProjectName.svg)](https://www.nuget.org/packages/ProjectName)
+Install **Faithlife.FakeData** using NuGet. [![NuGet](https://img.shields.io/nuget/v/Faithlife.FakeData.svg)](https://www.nuget.org/packages/Faithlife.FakeData)
 
 ## Documentation
 
-* [Reference Documentation](ProjectName.md)
+* [Reference Documentation](Faithlife.FakeData.md)
