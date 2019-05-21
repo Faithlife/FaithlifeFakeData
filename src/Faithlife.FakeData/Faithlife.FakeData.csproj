@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <VersionPrefix>0.1.1</VersionPrefix>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>A fake in-memory relational database for prototypes and unit tests.</Description>
     <PackageTags>fake in-memory database</PackageTags>

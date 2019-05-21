@@ -8,6 +8,14 @@ Prefix the description of the change with `[major]`, `[minor]`, or `[patch]` in 
 
 ## Released
 
+### 0.1.2
+
+* Updated build script.
+
+### 0.1.1
+
+* Automatically create tables.
+
 ### 0.1.0
 
 * Initial release.
