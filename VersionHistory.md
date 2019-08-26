@@ -8,6 +8,10 @@ Prefix the description of the change with `[major]`, `[minor]`, or `[patch]` in 
 
 ## Released
 
+### 1.0.0
+
+* Official release.
+
 ### 0.1.2
 
 * Updated build script.
