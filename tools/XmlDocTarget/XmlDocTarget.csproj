@@ -3,11 +3,11 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace />
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Faithlife.Build" Version="3.7.4" />
+    <ProjectReference Include="..\..\src\Faithlife.FakeData\Faithlife.FakeData.csproj" />
   </ItemGroup>
 
 </Project>

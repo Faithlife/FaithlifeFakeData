@@ -45,7 +45,7 @@ namespace Faithlife.FakeData
 
 				void trySetKeyValue<TValue>(DtoProperty<T, TValue> k, TValue v)
 				{
-					if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord), default))
+					if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord), default!))
 						k.SetValue(newRecord, v);
 				}
 			}
@@ -87,6 +87,7 @@ namespace Faithlife.FakeData
 				ValidateRecord(record);
 				updateCount++;
 			}
+
 			return updateCount;
 		}
 
@@ -155,7 +156,7 @@ namespace Faithlife.FakeData
 
 				bool notNull = propertyInfo.GetCustomAttribute<RequiredAttribute>() != null;
 				int? stringLength = propertyInfo.GetCustomAttribute<StringLengthAttribute>()?.MaximumLength;
-				string regexPattern = propertyInfo.GetCustomAttribute<RegularExpressionAttribute>()?.Pattern;
+				string? regexPattern = propertyInfo.GetCustomAttribute<RegularExpressionAttribute>()?.Pattern;
 				if (notNull || stringLength != null || regexPattern != null)
 				{
 					void validate(T record)
@@ -179,6 +180,7 @@ namespace Faithlife.FakeData
 					validators.Add(validate);
 				}
 			}
+
 			m_validators = validators;
 		}
 
@@ -198,7 +200,7 @@ namespace Faithlife.FakeData
 
 		private readonly FakeDatabaseContext m_context;
 		private readonly HashSet<T> m_records;
-		private readonly IDtoProperty<T> m_primaryKey;
+		private readonly IDtoProperty<T>? m_primaryKey;
 		private readonly IReadOnlyList<Action<T>> m_validators;
 		private int m_nextAutoId;
 	}

@@ -50,9 +50,9 @@ namespace Faithlife.FakeData.Tests
 			var database = FakeDatabase.Create<WidgetDatabaseContext>();
 			using (var context = database.Lock())
 			{
-				Invoking(() => context.Widgets.Add(null)).Should().Throw<ArgumentNullException>();
-				Invoking(() => context.Widgets.AddRange(null)).Should().Throw<ArgumentNullException>();
-				Invoking(() => context.Widgets.AddRange(new WidgetRecord[] { null })).Should().Throw<ArgumentNullException>();
+				Invoking(() => context.Widgets.Add(null!)).Should().Throw<ArgumentNullException>();
+				Invoking(() => context.Widgets.AddRange(null!)).Should().Throw<ArgumentNullException>();
+				Invoking(() => context.Widgets.AddRange(new WidgetRecord[] { null! })).Should().Throw<ArgumentNullException>();
 			}
 		}
 

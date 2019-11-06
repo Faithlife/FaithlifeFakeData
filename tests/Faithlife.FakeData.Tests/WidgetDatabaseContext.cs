@@ -2,6 +2,11 @@ namespace Faithlife.FakeData.Tests
 {
 	public sealed class WidgetDatabaseContext : FakeDatabaseContext
 	{
-		public FakeDatabaseTable<WidgetRecord> Widgets { get; } = null;
+		public WidgetDatabaseContext()
+		{
+			Widgets = CreateTable<WidgetRecord>();
+		}
+
+		public FakeDatabaseTable<WidgetRecord> Widgets { get; }
 	}
 }
