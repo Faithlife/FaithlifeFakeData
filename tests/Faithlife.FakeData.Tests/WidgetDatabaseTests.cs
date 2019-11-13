@@ -87,7 +87,7 @@ namespace Faithlife.FakeData.Tests
 		{
 			var database = FakeDatabase.Create<WidgetDatabaseContext>();
 			using (var context = database.Lock())
-				Invoking(() => context.Widgets.Add(new WidgetRecord())).Should().Throw<InvalidOperationException>();
+				Invoking(() => context.Widgets.Add(new WidgetRecord { Name = null! })).Should().Throw<InvalidOperationException>();
 		}
 
 		[Test]
