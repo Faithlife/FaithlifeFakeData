@@ -8,6 +8,10 @@ Prefix the description of the change with `[major]`, `[minor]`, or `[patch]` in 
 
 ## Released
 
+### 2.0.0
+
+* **Breaking:** Don't automatically create tables for backing fields. (It doesn't work well with (non-)nullable reference types, and reflection can't necessarily set backing fields for read-only properties.)
+
 ### 1.0.0
 
 * Official release.
