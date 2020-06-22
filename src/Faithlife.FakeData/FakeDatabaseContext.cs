@@ -14,7 +14,11 @@ namespace Faithlife.FakeData
 		/// <summary>
 		/// Unlocks the database.
 		/// </summary>
-		public void Dispose() => m_semaphore.Release();
+		public void Dispose()
+		{
+			m_semaphore.Release();
+			m_semaphore.Dispose();
+		}
 
 		/// <summary>
 		/// Creates an instance.

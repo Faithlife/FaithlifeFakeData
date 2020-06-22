@@ -35,15 +35,15 @@ namespace Faithlife.FakeData
 			if (m_primaryKey != null)
 			{
 				if (m_primaryKey is DtoProperty<T, long> longKey)
-					trySetKeyValue(longKey, m_nextAutoId++);
+					TrySetKeyValue(longKey, m_nextAutoId++);
 				else if (m_primaryKey is DtoProperty<T, long?> nullableLongKey)
-					trySetKeyValue(nullableLongKey, m_nextAutoId++);
+					TrySetKeyValue(nullableLongKey, m_nextAutoId++);
 				else if (m_primaryKey is DtoProperty<T, int> intKey)
-					trySetKeyValue(intKey, m_nextAutoId++);
+					TrySetKeyValue(intKey, m_nextAutoId++);
 				else if (m_primaryKey is DtoProperty<T, int?> nullableIntKey)
-					trySetKeyValue(nullableIntKey, m_nextAutoId++);
+					TrySetKeyValue(nullableIntKey, m_nextAutoId++);
 
-				void trySetKeyValue<TValue>(DtoProperty<T, TValue> k, TValue v)
+				void TrySetKeyValue<TValue>(DtoProperty<T, TValue> k, TValue v)
 				{
 					if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord), default!))
 						k.SetValue(newRecord, v);
@@ -159,7 +159,7 @@ namespace Faithlife.FakeData
 				string? regexPattern = propertyInfo.GetCustomAttribute<RegularExpressionAttribute>()?.Pattern;
 				if (notNull || stringLength != null || regexPattern != null)
 				{
-					void validate(T record)
+					void Validate(T record)
 					{
 						object value = property.GetValue(record);
 
@@ -177,7 +177,7 @@ namespace Faithlife.FakeData
 						}
 					}
 
-					validators.Add(validate);
+					validators.Add(Validate);
 				}
 			}
 
