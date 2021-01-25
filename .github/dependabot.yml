@@ -3,4 +3,8 @@ updates:
 - package-ecosystem: nuget
   directory: "/"
   schedule:
-    interval: weekly
+    interval: daily
+  allow:
+  - dependency-name: Faithlife.Reflection
+  - dependency-name: System.ComponentModel.Annotations
+  - dependency-name: XmlDocMarkdown.Core
