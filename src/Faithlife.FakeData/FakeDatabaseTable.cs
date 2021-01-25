@@ -45,7 +45,7 @@ namespace Faithlife.FakeData
 
 				void TrySetKeyValue<TValue>(DtoProperty<T, TValue> k, TValue v)
 				{
-					if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord), default!))
+					if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord)!, default!))
 						k.SetValue(newRecord, v);
 				}
 			}
@@ -80,7 +80,7 @@ namespace Faithlife.FakeData
 
 			VerifyContextLocked();
 
-			int updateCount = 0;
+			var updateCount = 0;
 			foreach (var record in m_records.Where(condition))
 			{
 				action(record);
@@ -102,7 +102,7 @@ namespace Faithlife.FakeData
 
 			VerifyContextLocked();
 
-			int removeCount = 0;
+			var removeCount = 0;
 			foreach (var record in m_records.Where(condition).ToList())
 				removeCount += m_records.Remove(record) ? 1 : 0;
 			return removeCount;
@@ -154,14 +154,14 @@ namespace Faithlife.FakeData
 			{
 				var propertyInfo = property.MemberInfo;
 
-				bool notNull = propertyInfo.GetCustomAttribute<RequiredAttribute>() != null;
-				int? stringLength = propertyInfo.GetCustomAttribute<StringLengthAttribute>()?.MaximumLength;
-				string? regexPattern = propertyInfo.GetCustomAttribute<RegularExpressionAttribute>()?.Pattern;
+				var notNull = propertyInfo.GetCustomAttribute<RequiredAttribute>() != null;
+				var stringLength = propertyInfo.GetCustomAttribute<StringLengthAttribute>()?.MaximumLength;
+				var regexPattern = propertyInfo.GetCustomAttribute<RegularExpressionAttribute>()?.Pattern;
 				if (notNull || stringLength != null || regexPattern != null)
 				{
 					void Validate(T record)
 					{
-						object value = property.GetValue(record);
+						var value = property.GetValue(record);
 
 						if (value == null)
 						{
