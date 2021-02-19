@@ -1,5 +1,9 @@
 # Release Notes
 
+## 2.1.1
+
+* Fix bug when locking database context.
+
 ## 2.1.0
 
 * Update `Faithlife.Reflection` and `System.ComponentModel.Annotations`.
