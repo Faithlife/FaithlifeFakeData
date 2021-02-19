@@ -16,8 +16,8 @@ namespace Faithlife.FakeData
 		/// </summary>
 		public void Dispose()
 		{
+			// do not dispose the semaphore; it is shared among cloned contexts
 			m_semaphore.Release();
-			m_semaphore.Dispose();
 		}
 
 		/// <summary>
