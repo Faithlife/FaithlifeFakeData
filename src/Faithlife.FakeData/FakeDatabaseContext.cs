@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,6 +42,7 @@ namespace Faithlife.FakeData
 
 		internal FakeDatabaseContext ShallowClone() => (FakeDatabaseContext) MemberwiseClone();
 
+		[SuppressMessage("Usage", "CA2213:Disposable fields should be disposed", Justification = "Shared among cloned contexts.")]
 		private readonly SemaphoreSlim m_semaphore;
 	}
 }
