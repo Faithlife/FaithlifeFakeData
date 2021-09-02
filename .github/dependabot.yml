@@ -7,4 +7,3 @@ updates:
   allow:
   - dependency-name: Faithlife.Reflection
   - dependency-name: System.ComponentModel.Annotations
-  - dependency-name: XmlDocMarkdown.Core
