@@ -22,14 +22,14 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// to access the record ID.</remarks>
 	public T Add(T record)
 	{
-		if (record == null)
+		if (record is null)
 			throw new ArgumentNullException(nameof(record));
 
 		VerifyContextLocked();
 
 		var newRecord = s_dtoInfo.ShallowClone(record);
 
-		if (m_primaryKey != null)
+		if (m_primaryKey is not null)
 		{
 			if (m_primaryKey is DtoProperty<T, long> longKey)
 				TrySetKeyValue(longKey, m_nextAutoId++);
@@ -58,7 +58,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// <remarks>See <see cref="Add"/>.</remarks>
 	public IReadOnlyList<T> AddRange(IEnumerable<T> records)
 	{
-		if (records == null)
+		if (records is null)
 			throw new ArgumentNullException(nameof(records));
 
 		return records.Select(Add).ToList();
@@ -70,9 +70,9 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// <returns>The number of records updated.</returns>
 	public int UpdateWhere(Func<T, bool> condition, Action<T> action)
 	{
-		if (condition == null)
+		if (condition is null)
 			throw new ArgumentNullException(nameof(condition));
-		if (action == null)
+		if (action is null)
 			throw new ArgumentNullException(nameof(action));
 
 		VerifyContextLocked();
@@ -94,7 +94,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// <returns>The number of records removed.</returns>
 	public int RemoveWhere(Func<T, bool> condition)
 	{
-		if (condition == null)
+		if (condition is null)
 			throw new ArgumentNullException(nameof(condition));
 
 		VerifyContextLocked();
@@ -142,7 +142,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 		m_records = new HashSet<T>();
 		m_nextAutoId = 1;
 
-		var keyProperties = s_dtoInfo.Properties.Where(x => x.MemberInfo.GetCustomAttribute<KeyAttribute>() != null).ToList();
+		var keyProperties = s_dtoInfo.Properties.Where(x => x.MemberInfo.GetCustomAttribute<KeyAttribute>() is not null).ToList();
 		if (keyProperties.Count == 1)
 			m_primaryKey = keyProperties[0];
 
@@ -151,25 +151,25 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 		{
 			var propertyInfo = property.MemberInfo;
 
-			var notNull = propertyInfo.GetCustomAttribute<RequiredAttribute>() != null;
+			var notNull = propertyInfo.GetCustomAttribute<RequiredAttribute>() is not null;
 			var stringLength = propertyInfo.GetCustomAttribute<StringLengthAttribute>()?.MaximumLength;
 			var regexPattern = propertyInfo.GetCustomAttribute<RegularExpressionAttribute>()?.Pattern;
-			if (notNull || stringLength != null || regexPattern != null)
+			if (notNull || stringLength is not null || regexPattern is not null)
 			{
 				void Validate(T record)
 				{
 					var value = property.GetValue(record);
 
-					if (value == null)
+					if (value is null)
 					{
 						if (notNull)
 							throw new InvalidOperationException($"{property.Name} must not be null.");
 					}
 					else if (value is string stringValue)
 					{
-						if (stringLength != null && stringValue.Length > stringLength.Value)
+						if (stringLength is not null && stringValue.Length > stringLength.Value)
 							throw new InvalidOperationException($"{property.Name} is too long (length {stringValue.Length}, max length {stringLength.Value}).");
-						if (regexPattern != null && !Regex.IsMatch(stringValue, regexPattern))
+						if (regexPattern is not null && !Regex.IsMatch(stringValue, regexPattern))
 							throw new InvalidOperationException($"{property.Name} does not match the regex '{regexPattern}'.");
 					}
 				}
