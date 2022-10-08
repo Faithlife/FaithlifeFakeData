@@ -8,7 +8,7 @@ public IEnumerator<T> GetEnumerator()
 
 ## Remarks
 
-The returned records are clones of the actual database records. Use [`UpdateWhere`](UpdateWhere.md) to make modifications to records.
+The returned records are clones of the actual database records. Use [`UpdateWhere`](./UpdateWhere.md) to make modifications to records.
 
 ## See Also
 

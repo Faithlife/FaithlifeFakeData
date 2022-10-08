@@ -8,7 +8,7 @@ public IReadOnlyList<T> AddRange(IEnumerable<T> records)
 
 ## Remarks
 
-See [`Add`](Add.md).
+See [`Add`](./Add.md).
 
 ## See Also
 

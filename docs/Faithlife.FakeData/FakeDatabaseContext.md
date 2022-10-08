@@ -21,7 +21,7 @@ public abstract class FakeDatabaseContext : IDisposable
 
 ## Remarks
 
-The derived class should have one or more read-only properties of type [`FakeDatabaseTable`](FakeDatabaseTable-1.md).
+The derived class should have one or more read-only properties of type [`FakeDatabaseTable`](./FakeDatabaseTable-1.md).
 
 ## See Also
 

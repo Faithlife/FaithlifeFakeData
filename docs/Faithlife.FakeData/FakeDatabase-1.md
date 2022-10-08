@@ -16,7 +16,7 @@ public sealed class FakeDatabase<TContext>
 
 ## See Also
 
-* class [FakeDatabaseContext](FakeDatabaseContext.md)
+* class [FakeDatabaseContext](./FakeDatabaseContext.md)
 * namespace [Faithlife.FakeData](../Faithlife.FakeData.md)
 * [FakeDatabase.cs](https://github.com/Faithlife/FaithlifeFakeData/tree/master/src/Faithlife.FakeData/FakeDatabase.cs)
 
