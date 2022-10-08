@@ -1,5 +1,9 @@
 # Release Notes
 
+## 2.1.2
+
+* Add .NET 6 target.
+
 ## 2.1.1
 
 * Fix bug when locking database context.

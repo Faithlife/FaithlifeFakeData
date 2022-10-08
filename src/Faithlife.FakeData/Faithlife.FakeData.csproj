@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net6.0</TargetFrameworks>
     <Description>A fake in-memory relational database for prototypes and unit tests.</Description>
     <PackageTags>fake in-memory database</PackageTags>
     <IsPackable>true</IsPackable>
@@ -9,7 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Faithlife.Reflection" Version="1.1.0" />
+    <PackageReference Include="Faithlife.Reflection" Version="1.2.2" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
