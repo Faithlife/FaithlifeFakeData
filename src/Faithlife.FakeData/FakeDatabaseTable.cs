@@ -2,7 +2,6 @@ using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using Faithlife.Reflection;
 
 namespace Faithlife.FakeData;
 
@@ -113,7 +112,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	public IEnumerator<T> GetEnumerator()
 	{
 		VerifyContextLocked();
-		return m_records.Select(x => s_dtoInfo.ShallowClone(x)).GetEnumerator();
+		return m_records.Select(s_dtoInfo.ShallowClone).GetEnumerator();
 	}
 
 	/// <summary>
