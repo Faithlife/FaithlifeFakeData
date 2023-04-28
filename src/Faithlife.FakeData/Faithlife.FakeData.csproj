@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Faithlife.Reflection" Version="1.2.2" />
+    <PackageReference Include="Faithlife.Reflection" Version="1.2.3" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
