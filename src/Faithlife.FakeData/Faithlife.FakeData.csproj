@@ -5,7 +5,6 @@
     <Description>A fake in-memory relational database for prototypes and unit tests.</Description>
     <PackageTags>fake in-memory database</PackageTags>
     <IsPackable>true</IsPackable>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 

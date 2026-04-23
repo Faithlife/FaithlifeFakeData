@@ -41,7 +41,11 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 
 			void TrySetKeyValue<TValue>(DtoProperty<T, TValue> k, TValue v)
 			{
+#if NET
+				if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord), default))
+#else
 				if (EqualityComparer<TValue>.Default.Equals(k.GetValue(newRecord)!, default!))
+#endif
 					k.SetValue(newRecord, v);
 			}
 		}
