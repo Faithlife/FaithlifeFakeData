@@ -1,2 +1,5 @@
 conventions:
 - path: Faithlife/CodingGuidelines/conventions/repo-conventions-workflow
+- path: Faithlife/CodingGuidelines/conventions/gitattributes-lf
+- path: Faithlife/CodingGuidelines/conventions/dotnet-sdk10
+- path: Faithlife/CodingGuidelines/conventions/dotnet-slnx
