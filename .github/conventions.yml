@@ -3,3 +3,4 @@ conventions:
 - path: Faithlife/CodingGuidelines/conventions/gitattributes-lf
 - path: Faithlife/CodingGuidelines/conventions/dotnet-sdk10
 - path: Faithlife/CodingGuidelines/conventions/dotnet-slnx
+- path: Faithlife/CodingGuidelines/conventions/apm-install
