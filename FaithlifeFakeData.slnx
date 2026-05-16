@@ -14,5 +14,4 @@
   <Project Path="src/Faithlife.FakeData/Faithlife.FakeData.csproj" />
   <Project Path="tests/Faithlife.FakeData.Tests/Faithlife.FakeData.Tests.csproj" />
   <Project Path="tools/Build/Build.csproj" />
-  <Project Path="tools/XmlDocGen/XmlDocGen.csproj" />
 </Solution>
