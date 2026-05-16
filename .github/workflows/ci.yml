@@ -1,4 +1,4 @@
-name: Build
+name: Continuous Integration
 
 on:
   push:
@@ -53,11 +53,12 @@ jobs:
     needs: build-matrix
     if: ${{ always() }}
     steps:
-    - name: Check matrix build
+    - name: Build failed
       if: ${{ needs.build-matrix.result != 'success' }}
-      run: |
-        Write-Host "Build failed."
-        exit 1
+      run: Write-Host "Build failed."; exit 1
+    - name: Build succeeded
+      if: ${{ needs.build-matrix.result == 'success' }}
+      run: Write-Host "Build succeeded."
 
   publish:
     name: Publish
