@@ -7,6 +7,7 @@
     <File Path="build.ps1" />
     <File Path="CONTRIBUTING.md" />
     <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
     <File Path="global.json" />
     <File Path="LICENSE" />
     <File Path="nuget.config" />
@@ -15,9 +16,11 @@
   </Folder>
   <Folder Name="/Solution Items/.github/">
     <File Path=".github/conventions.yml" />
+    <File Path=".github/lsp.json" />
   </Folder>
   <Folder Name="/Solution Items/.github/workflows/">
     <File Path=".github/workflows/ci.yml" />
+    <File Path=".github/workflows/copilot-setup-steps.yml" />
   </Folder>
   <Project Path="src/Faithlife.FakeData/Faithlife.FakeData.csproj" />
   <Project Path="tests/Faithlife.FakeData.Tests/Faithlife.FakeData.Tests.csproj" />
