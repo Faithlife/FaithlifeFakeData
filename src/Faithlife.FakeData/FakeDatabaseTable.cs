@@ -21,12 +21,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// to access the record ID.</remarks>
 	public T Add(T record)
 	{
-#if NET
-		ArgumentNullException.ThrowIfNull(record);
-#else
-		if (record is null)
-			throw new ArgumentNullException(nameof(record));
-#endif
+		ArgumentNullException.ThrowIfNull(record, nameof(record));
 
 		VerifyContextLocked();
 
@@ -65,12 +60,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// <remarks>See <see cref="Add"/>.</remarks>
 	public IReadOnlyList<T> AddRange(IEnumerable<T> records)
 	{
-#if NET
-		ArgumentNullException.ThrowIfNull(records);
-#else
-		if (records is null)
-			throw new ArgumentNullException(nameof(records));
-#endif
+		ArgumentNullException.ThrowIfNull(records, nameof(records));
 
 		return records.Select(Add).ToList();
 	}
@@ -81,15 +71,8 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// <returns>The number of records updated.</returns>
 	public int UpdateWhere(Func<T, bool> condition, Action<T> action)
 	{
-#if NET
-		ArgumentNullException.ThrowIfNull(condition);
-		ArgumentNullException.ThrowIfNull(action);
-#else
-		if (condition is null)
-			throw new ArgumentNullException(nameof(condition));
-		if (action is null)
-			throw new ArgumentNullException(nameof(action));
-#endif
+		ArgumentNullException.ThrowIfNull(condition, nameof(condition));
+		ArgumentNullException.ThrowIfNull(action, nameof(action));
 
 		VerifyContextLocked();
 
@@ -110,12 +93,7 @@ public sealed class FakeDatabaseTable<T> : IEnumerable<T>
 	/// <returns>The number of records removed.</returns>
 	public int RemoveWhere(Func<T, bool> condition)
 	{
-#if NET
-		ArgumentNullException.ThrowIfNull(condition);
-#else
-		if (condition is null)
-			throw new ArgumentNullException(nameof(condition));
-#endif
+		ArgumentNullException.ThrowIfNull(condition, nameof(condition));
 
 		VerifyContextLocked();
 
