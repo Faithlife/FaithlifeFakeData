@@ -6,6 +6,7 @@
     <PackageTags>fake in-memory database</PackageTags>
     <IsPackable>true</IsPackable>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RewritePackageReadmeLinks>true</RewritePackageReadmeLinks>
   </PropertyGroup>
 
   <ItemGroup>
