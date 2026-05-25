@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Faithlife.FakeData.Tests;
 
-public sealed class WidgetRecord
+internal sealed class WidgetRecord
 {
 	[Key]
 	public long WidgetId { get; set; }

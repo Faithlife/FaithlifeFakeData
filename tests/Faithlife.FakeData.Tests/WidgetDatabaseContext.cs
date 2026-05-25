@@ -1,6 +1,6 @@
 namespace Faithlife.FakeData.Tests;
 
-public sealed class WidgetDatabaseContext : FakeDatabaseContext
+internal sealed class WidgetDatabaseContext : FakeDatabaseContext
 {
 	public WidgetDatabaseContext()
 	{
