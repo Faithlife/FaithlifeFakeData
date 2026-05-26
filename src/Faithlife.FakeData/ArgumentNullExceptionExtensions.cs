@@ -1,11 +1,13 @@
 #if !NET
+using System.Runtime.CompilerServices;
+
 namespace Faithlife.FakeData;
 
 internal static class ArgumentNullExceptionExtensions
 {
 	extension(ArgumentNullException)
 	{
-		public static void ThrowIfNull(object? argument, string? paramName)
+		public static void ThrowIfNull(object? argument, [CallerArgumentExpression(nameof(argument))] string? paramName = null)
 		{
 			if (argument is null)
 				throw new ArgumentNullException(paramName);
