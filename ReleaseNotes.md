@@ -1,5 +1,9 @@
 # Release Notes
 
+## 2.1.5
+
+* Update package README.
+
 ## 2.1.4
 
 * Fix links in NuGet package README.

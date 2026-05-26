@@ -1,7 +1,7 @@
 <Project>
 
   <PropertyGroup>
-    <VersionPrefix>2.1.4</VersionPrefix>
+    <VersionPrefix>2.1.5</VersionPrefix>
     <NoWarn>$(NoWarn);1591;1998;NU1507;NU5105</NoWarn>
     <GitHubOrganization>Faithlife</GitHubOrganization>
     <RepositoryName>FaithlifeFakeData</RepositoryName>
