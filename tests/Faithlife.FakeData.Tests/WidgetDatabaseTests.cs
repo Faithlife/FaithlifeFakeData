@@ -4,7 +4,7 @@ using NUnit.Framework;
 namespace Faithlife.FakeData.Tests;
 
 [TestFixture]
-public class WidgetDatabaseTests
+internal sealed class WidgetDatabaseTests
 {
 	[Test]
 	public void CrudTests()
