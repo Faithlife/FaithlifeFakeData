@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Faithlife.FakeData;
 
-internal static class ArgumentNullExceptionExtensions
+internal static class ExceptionExtensions
 {
 	extension(ArgumentNullException)
 	{
